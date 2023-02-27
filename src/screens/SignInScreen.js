@@ -28,7 +28,7 @@ const SignInScreen = () => {
         <CustomButton text="Sign In" onPress={onSignInPressed} />
       </View>
       <View style={styles.extra}>
-        <CustomButton text="Forgot password?" onPress={onForgotPasswordPressed} type="TERTIARY" />
+        {/* <CustomButton text="Forgot password?" onPress={onForgotPasswordPressed} type="TERTIARY" /> */}
         <CustomButton text="Don't have an account? Create one" onPress={onSignUpPressed} type="TERTIARY" />
       </View>
     </View>
@@ -40,13 +40,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 20,
     flex: 1,
-    justifyContent: "space-between",
+    justifyContent: "center",
   },
   logo: {
     width: "70%",
     maxWidth: 300,
     maxHeight: 200,
-    // position: "absolute",
+    position: "absolute",
     top: 20,
   },
   main: {
@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
     height: 100,
   },
   extra: {
-    height: 100,
+    position: "absolute",
+    bottom: 10,
   },
 });
 

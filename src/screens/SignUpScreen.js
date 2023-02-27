@@ -12,7 +12,7 @@ const SignUpScreen = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const onRegisterPressed = () => {
-    navigation.navigate("ConfirmEmail");
+    navigation.navigate("FindSchool");
   };
   const onSignInPressed = () => {
     navigation.navigate("SignIn");

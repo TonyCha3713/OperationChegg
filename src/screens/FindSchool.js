@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import DropDownPicker from "react-native-dropdown-picker";
 import CustomButton from "../components/CustomButton";
 import axios from "axios";
-const FindSchool = () => {
+const FindSchool = ({ navigation }) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [items, setItems] = useState([
-    { label: "Palos Verdes Peninsula High School", value: "pvphs" },
-    { label: "Palos Verdes High School", value: "pvhs" },
-  ]);
+  const [items, setItems] = useState([]);
+
+  // { label: "Palos Verdes Peninsula High School", value: "pvphs" },
+  // { label: "Palos Verdes High School", value: "pvhs" },
 
   async function querySchools(keyword) {
     setLoading(true);
@@ -55,12 +55,12 @@ const FindSchool = () => {
         onChangeSearchText={(search) => querySchools(search)}
         searchable={true}
         searchTextInputStyle={{ borderWidth: 0 }}
-        searchPlaceholder={""}
+        searchPlaceholder={"Search school"}
 
         // style
       />
 
-      {value && <CustomButton text="Continue" onPress={{}} />}
+      {value && <CustomButton text="Continue" onPress={() => navigation.navigate("HomeStack")} />}
     </View>
   );
 };

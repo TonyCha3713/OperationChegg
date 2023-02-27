@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import CustomInput from "../components/CustomInput";
 import CustomButton from "../components/CustomButton";
-import { useNavigation } from "@react-navigation/native";
 
-const NewPasswordScreen = () => {
-  const navigation = useNavigation();
+const NewPasswordScreen = ({ navigation }) => {
   const [code, setCode] = useState("");
   const [password, setpassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");

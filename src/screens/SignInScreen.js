@@ -4,12 +4,11 @@ import Logo from "../../assets/images/Logo_1.png";
 import CustomInput from "../components/CustomInput";
 import CustomButton from "../components/CustomButton";
 import { useNavigation } from "@react-navigation/native";
-const SignInScreen = () => {
+const SignInScreen = ({ navigation }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const { height } = useWindowDimensions();
-  const navigation = useNavigation();
   const onSignInPressed = () => {
     navigation.navigate("Home");
   };

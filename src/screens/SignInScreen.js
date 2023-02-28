@@ -22,8 +22,8 @@ const SignInScreen = ({ navigation }) => {
     <View style={styles.root}>
       <Image source={Logo} style={[styles.logo, { height: height * 0.3 }]} resizeMode="contain" />
       <View style={styles.main}>
-        <CustomInput placeholder="Username" value={username} setValue={setUsername} />
-        <CustomInput placeholder="Password" value={password} setValue={setPassword} secureTextEntry />
+        <CustomInput placeholder="Enter your email address" value={username} setValue={setUsername} iconName="email-outline"/>
+        <CustomInput placeholder="Enter your password" value={password} setValue={setPassword} secureTextEntry iconName="lock-outline"/>
         <CustomButton text="Sign In" onPress={onSignInPressed} />
       </View>
       <View style={styles.extra}>
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     maxWidth: 300,
     maxHeight: 200,
     position: "absolute",
-    top: 20,
+    top: 10,
   },
   main: {
     alignItems: "center",

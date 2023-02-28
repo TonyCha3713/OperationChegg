@@ -10,20 +10,24 @@ import NewPasswordScreen from "../screens/NewPasswordScreen";
 import HomeScreen from "../screens/HomeScreen";
 import FindSchool from "../screens/FindSchool";
 import HomeStack from "../screens/HomeStack";
+import Registration from "../screens/Registration";
+import Login from "../screens/Login";
 
 const Stack = createNativeStackNavigator();
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="SignIn" options={{ headerTitle: "Sign in" }} component={SignInScreen} />
-        <Stack.Screen name="SignUp" options={{ headerTitle: "Sign up" }} component={SignUpScreen} />
-        <Stack.Screen name="ConfirmEmail" options={{ headerTitle: "Confirm Email" }} component={ConfirmEmailScreen} />
-        <Stack.Screen name="ForgotPassword" options={{ headerTitle: "Forgot Password" }} component={ForgotPasswordScreen} />
-        <Stack.Screen name="NewPassword" options={{ headerTitle: "New Password" }} component={NewPasswordScreen} />
-        <Stack.Screen name="Home" options={{ headerTitle: "Home" }} component={HomeScreen} />
-        <Stack.Screen name="FindSchool" options={{ headerTitle: "Find School" }} component={FindSchool} />
-        <Stack.Screen name="HomeStack" options={{ headerShown: false }} component={HomeStack} />
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Registration" component={Registration} />
+        <Stack.Screen name="SignIn" component={SignInScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
+        <Stack.Screen name="ConfirmEmail" component={ConfirmEmailScreen} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
+        <Stack.Screen name="NewPassword" component={NewPasswordScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="FindSchool" component={FindSchool} />
+        <Stack.Screen name="HomeStack" component={HomeStack} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -15,7 +15,12 @@ const Input = ({ iconName, password, error, ...props }) => {
         setIsFocused(false);
       }}
     >
-      <View style={[styles.inputContainer, { borderColor: error ? COLORS.red : isFocused ? COLORS.darkBlue : COLORS.light }]}>
+      <View
+        style={[
+          styles.inputContainer,
+          { borderColor: error ? COLORS.red : isFocused ? COLORS.darkBlue : COLORS.light, borderWidth: isFocused ? 1.5 : 0.5 },
+        ]}
+      >
         <Icon name={iconName} style={{ fontSize: 22, color: COLORS.darkBlue, marginRight: 10 }} />
         <TextInput
           autoCapitalize="none"

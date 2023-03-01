@@ -95,11 +95,12 @@ const Registration = ({ navigation }) => {
         contentContainerStyle={{
           paddingTop: 50,
           paddingHorizontal: 20,
+          flex: 1,
         }}
       >
         <Text style={{ color: COLORS.black, fontSize: 40, fontWeight: "bold" }}>Register</Text>
         <Text style={{ color: COLORS.grey, fontSize: 18, marginVertical: 10 }}>Enter Your Details to Register</Text>
-        <View style={{ marginVertical: 20 }}>
+        <ScrollView style={{ marginVertical: 20 }} contentContainerStyle={{ flex: 1 }}>
           <Input
             iconName="email-outline"
             label="Email"
@@ -143,23 +144,25 @@ const Registration = ({ navigation }) => {
             password
           />
           <Button onPress={Register} title="Register" />
-          <Text style={styles.text}>
-            By registering, you confirm that you accept our{" "}
-            <Text style={styles.link} onPress={onTermsOfUsePressed}>
-              Terms of Use
-            </Text>{" "}
-            and{" "}
-            <Text style={styles.link} onPress={onPrivacyPressed}>
-              Privacy Policy
+          <View style={{ position: "absolute", bottom: 10 }}>
+            <Text style={styles.text}>
+              By registering, you confirm that you accept our{" "}
+              <Text style={styles.link} onPress={onTermsOfUsePressed}>
+                Terms of Use
+              </Text>{" "}
+              and{" "}
+              <Text style={styles.link} onPress={onPrivacyPressed}>
+                Privacy Policy
+              </Text>
             </Text>
-          </Text>
-          <Text
-            onPress={() => navigation.navigate("Login")}
-            style={{ color: COLORS.black, textAlign: "center", fontSize: 16, fontWeight: "bold", marginTop: 20 }}
-          >
-            Already have account? <Text style={{ color: "#FDB075" }}>Login</Text>
-          </Text>
-        </View>
+            <Text
+              onPress={() => navigation.navigate("Login")}
+              style={{ color: COLORS.black, textAlign: "center", fontSize: 16, fontWeight: "bold", marginTop: 20 }}
+            >
+              Already have account? <Text style={{ color: "#FDB075" }}>Login</Text>
+            </Text>
+          </View>
+        </ScrollView>
       </ScrollView>
     </SafeAreaView>
   );

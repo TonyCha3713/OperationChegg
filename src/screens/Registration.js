@@ -3,8 +3,6 @@ import { SafeAreaView, ScrollView, Text, View, StyleSheet, useWindowDimensions, 
 import COLORS from '../colors/colors'
 import Input from '../components/Input';
 import Logo from '../../assets/images/logo.png'
-import CustomInput from '../components/CustomInput';
-import CustomButton from '../components/CustomButton';
 import Button from '../components/Button';
 import Loader from './Loader';
 import AsyncStorage from '@react-native-async-storage/async-storage';

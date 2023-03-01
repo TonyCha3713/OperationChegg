@@ -4,9 +4,9 @@ import Navigation from './src/navigation/index';
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.root}>
+    <View style={styles.root}>
       <Navigation />
-    </SafeAreaView>
+    </View>
   );
 };
 

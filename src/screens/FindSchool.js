@@ -1,8 +1,8 @@
 import { View, Text, StyleSheet } from "react-native";
 import React, { useState } from "react";
 import DropDownPicker from "react-native-dropdown-picker";
-import CustomButton from "../components/CustomButton";
 import axios from "axios";
+import Button from "../components/Button";
 const FindSchool = ({ navigation }) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
@@ -60,7 +60,7 @@ const FindSchool = ({ navigation }) => {
         // style
       />
 
-      {value && <CustomButton text="Continue" onPress={() => navigation.navigate("HomeStack")} />}
+      {value && <Button title="Continue" onPress={() => navigation.navigate("Tabs")} />}
     </View>
   );
 };

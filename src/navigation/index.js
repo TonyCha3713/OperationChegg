@@ -13,7 +13,7 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <ContextProvider>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Navigator initialRouteName="Register" screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Registration" component={Registration} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Tabs" component={Tabs} />

@@ -77,11 +77,12 @@ const Login = ({ navigation }) => {
         contentContainerStyle={{
           paddingTop: 50,
           paddingHorizontal: 20,
+          flex: 1,
         }}
       >
         <Text style={{ color: COLORS.black, fontSize: 40, fontWeight: "bold" }}>Login</Text>
         <Text style={{ color: COLORS.grey, fontSize: 18, marginVertical: 10 }}>Enter Your Details to Login</Text>
-        <View style={{ marginVertical: 20 }}>
+        <View style={{ marginVertical: 20, flex: 1 }}>
           <Input
             iconName="email-outline"
             label="Email"
@@ -106,7 +107,15 @@ const Login = ({ navigation }) => {
           <Button title="Log in" onPress={Login} />
           <Text
             onPress={() => navigation.navigate("Registration")}
-            style={{ color: COLORS.black, textAlign: "center", fontSize: 16, fontWeight: "bold", marginTop: 20 }}
+            style={{
+              color: COLORS.black,
+              textAlign: "center",
+              fontSize: 16,
+              fontWeight: "bold",
+              position: "absolute",
+              bottom: 10,
+              alignSelf: "center",
+            }}
           >
             Dont have account? <Text style={{ color: "#FDB075" }}>Register</Text>
           </Text>

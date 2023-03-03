@@ -40,8 +40,6 @@ const PostTab = ({navigation}) => {
         imageList.push(image)
       })
       setImage(imageList)
-      setImage(null)
-      setForm({title: '', className: '', teacherName: ''})
       setLoading(false)
     }
   };
@@ -67,6 +65,11 @@ const PostTab = ({navigation}) => {
         setLoading(true);
         setTimeout(() => {
           setLoading(false)
+          setImage(null)
+          setForm({
+            title: '',
+            className: '',
+            teacherName: '',})
           navigation.navigate("Search")
       }, 2500)
       }

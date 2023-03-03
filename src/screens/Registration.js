@@ -78,9 +78,8 @@ const Registration = ({ navigation }) => {
       } catch (err) {
         console.log("err here,", err);
         console.log(err.response.data.message);
-      } finally {
-        setLoading(false);
       }
+      setLoading(false);
     }
   };
   const handleOnChange = (text, input) => {
@@ -115,7 +114,7 @@ const Registration = ({ navigation }) => {
           <Input
             iconName="account-outline"
             label="Full Name"
-            placeholder="Enter your username"
+            placeholder="Enter your full name"
             onChangeText={(text) => handleOnChange(text, "fullName")}
             error={errors.fullName}
             onFocus={() => {
@@ -136,7 +135,7 @@ const Registration = ({ navigation }) => {
           <Input
             iconName="lock-outline"
             label="Confirm password"
-            placeholder="Confirm your password"
+            placeholder="Enter your password"
             onChangeText={(text) => handleOnChange(text, "confirmPassword")}
             error={errors.confirmPassword}
             onFocus={() => {
@@ -187,3 +186,4 @@ const styles = StyleSheet.create({
 });
 
 export default Registration;
+ç;

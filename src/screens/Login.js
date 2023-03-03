@@ -62,20 +62,21 @@ const Login = ({navigation}) => {
         setErrors((prevState) => ({...prevState, [input]: errorMessage}));
     }
     return (
-        <SafeAreaView style={{backgroundColor: COLORS.white, flex: 1}}>
+        <SafeAreaView style={{backgroundColor: COLORS.black, flex: 1}}>
             <Loader visible={loading}/>
             <ScrollView
                 contentContainerStyle={{
                     paddingTop: 50,
                     paddingHorizontal: 20,
                 }}>
-                <Text style={{color: COLORS.black, fontSize: 40, fontWeight: 'bold'}}>Login</Text>
+                <Text style={{color: COLORS.white, fontSize: 40, fontWeight: 'bold'}}>Login</Text>
                 <Text style={{color: COLORS.grey, fontSize: 18, marginVertical: 10}}>Enter Your Details to Login</Text>
                 <View style={{marginVertical: 20}}>
                     <Input 
                         iconName="email-outline"
                         label="Email"
                         placeholder="Enter your email address"
+                        placeholderTextColor={COLORS.grey}
                         onChangeText={text => handleOnChange(text, 'email')}
                         error={errors.email}
                         onFocus={() => {
@@ -87,6 +88,7 @@ const Login = ({navigation}) => {
                         iconName="lock-outline"
                         label="Password"
                         placeholder="Enter your password"
+                        placeholderTextColor={COLORS.grey}
                         onChangeText={text => handleOnChange(text, 'password')}
                         error={errors.password}
                         onFocus={() => {
@@ -97,7 +99,7 @@ const Login = ({navigation}) => {
                    <Button title="Log in" onPress={Login}/> 
                    <Text
                         onPress={() => navigation.navigate("Registration")}
-                        style={{color: COLORS.black, textAlign: 'center', fontSIze: 16, fontWeight: 'bold', marginTop: 20}}>Dont have account? <Text style={{ color: '#FDB075'}}>Register</Text></Text>
+                        style={{color: COLORS.grey, textAlign: 'center', fontSIze: 16, fontWeight: 'bold', marginTop: 20}}>Dont have account? <Text style={{ color: '#FDB075'}}>Register</Text></Text>
                 </View>
             </ScrollView>
         </SafeAreaView>

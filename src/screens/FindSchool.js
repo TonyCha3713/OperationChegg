@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import DropDownPicker from "react-native-dropdown-picker";
 import axios from "axios";
 import Button from "../components/Button";
+import COLORS from "../colors/colors";
 const FindSchool = ({ navigation }) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
@@ -37,7 +38,7 @@ const FindSchool = ({ navigation }) => {
   }
   return (
     <View style={styles.root}>
-      <Text style={styles.title}>Select your school</Text>
+      <Text style={styles.title}>Select school</Text>
 
       <DropDownPicker
         open={open}
@@ -48,15 +49,15 @@ const FindSchool = ({ navigation }) => {
         setItems={setItems}
         loading={loading}
         placeholder="Click to find your school"
-        style={{ borderColor: "gray", marginVertical: 10 }}
-        placeholderStyle={{ fontSize: 16, fontWeight: "bold", color: "gray" }}
-        dropDownContainerStyle={{ borderColor: "gray" }}
+        style={{ borderColor: COLORS.light, marginVertical: 10 }}
+        placeholderStyle={{ fontSize: 16, fontWeight: "bold", color: COLORS.grey }}
+        dropDownContainerStyle={{ borderColor: COLORS.grey }}
         textStyle={{ fontWeight: "bold", fontSize: 16 }}
         onChangeSearchText={(search) => querySchools(search)}
         searchable={true}
         searchTextInputStyle={{ borderWidth: 0 }}
-        searchPlaceholder={"Search school"}
-
+        searchPlaceholder="Search school"
+        searchPlaceholderTextColor={COLORS.grey}
         // style
       />
 
@@ -68,14 +69,17 @@ const FindSchool = ({ navigation }) => {
 const styles = StyleSheet.create({
   root: {
     alignItems: "center",
-    padding: 20,
+    // padding: 20,
     flex: 1,
-    justifyContent: "center",
+    // justifyContent: "center",
+    backgroundColor: COLORS.black,
+    paddingTop: 100,
+    paddingHorizontal: 20,
   },
   title: {
-    fontSize: 30,
+    fontSize: 40,
     fontWeight: "bold",
-    color: "#051C60",
+    color: COLORS.white,
     margin: 10,
   },
   text: {

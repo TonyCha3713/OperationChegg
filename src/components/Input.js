@@ -7,7 +7,7 @@ const Input = ({ label, iconName, password, error, onFocus = () => {}, ...props 
     const [isFocused, setIsFocused] = useState(false);
     return (
     <View style={{marginBottom: 20}}>
-        {/* <Text style={styles.label}>{label}</Text> */}
+        <Text style={styles.label}>{label}</Text>
         <View style={[styles.inputContainer, {borderColor: error ? COLORS.red:isFocused ? COLORS.darkBlue : COLORS.light}]}>
             <Icon 
                 name={iconName}
@@ -24,7 +24,7 @@ const Input = ({ label, iconName, password, error, onFocus = () => {}, ...props 
                 autoCapitalize='none'
                 secureTextEntry={hidePassword}
                 autoCorrect={false}
-                style={{color: COLORS.darkBlue, flex: 1}} 
+                style={{color: COLORS.light, flex: 1}} 
                 {...props}
             />
             {password &&

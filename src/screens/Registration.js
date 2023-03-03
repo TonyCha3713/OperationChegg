@@ -71,20 +71,21 @@ const Registration = ({navigation}) => {
         setErrors((prevState) => ({...prevState, [input]: errorMessage}));
     }
     return (
-        <SafeAreaView style={{backgroundColor: COLORS.white, flex: 1}}>
+        <SafeAreaView style={{backgroundColor: COLORS.black, flex: 1}}>
             <Loader visible={loading}/>
             <ScrollView
                 contentContainerStyle={{
                     paddingTop: 50,
                     paddingHorizontal: 20,
                 }}>
-                <Text style={{color: COLORS.black, fontSize: 40, fontWeight: 'bold'}}>Register</Text>
+                <Text style={{color: COLORS.white, fontSize: 40, fontWeight: 'bold'}}>Register</Text>
                 <Text style={{color: COLORS.grey, fontSize: 18, marginVertical: 10}}>Enter Your Details to Register</Text>
                 <View style={{marginVertical: 20}}>
                     <Input 
                         iconName="email-outline"
                         label="Email"
                         placeholder="Enter your email address"
+                        placeholderTextColor={COLORS.grey}
                         error={errors.email}
                         onFocus={() => {
                             handleError(null, 'email');
@@ -95,6 +96,7 @@ const Registration = ({navigation}) => {
                         iconName="account-outline"
                         label="Full Name"
                         placeholder="Enter your full name"
+                        placeholderTextColor={COLORS.grey}
                         onChangeText={text => handleOnChange(text, 'fullName')}
                         error={errors.fullName}
                         onFocus={() => {
@@ -105,6 +107,7 @@ const Registration = ({navigation}) => {
                         iconName="lock-outline"
                         label="Password"
                         placeholder="Enter your password"
+                        placeholderTextColor={COLORS.grey}
                         onChangeText={text => handleOnChange(text, 'password')}
                         error={errors.password}
                         onFocus={() => {
@@ -116,6 +119,7 @@ const Registration = ({navigation}) => {
                         iconName="lock-outline"
                         label="Confirm password"
                         placeholder="Enter your password"
+                        placeholderTextColor={COLORS.grey}
                         onChangeText={text => handleOnChange(text, 'confirmPassword')}
                         error={errors.confirmPassword}
                         onFocus={() => {
@@ -136,7 +140,7 @@ const Registration = ({navigation}) => {
                         </Text>
                    <Text
                         onPress={() => navigation.navigate("Login")} 
-                        style={{color: COLORS.black, textAlign: 'center', fontSIze: 16, fontWeight: 'bold', marginTop: 20}}>Already have account? <Text style={{ color: '#FDB075'}}>Login</Text></Text>
+                        style={{color: COLORS.grey, textAlign: 'center', fontSIze: 16, fontWeight: 'bold', marginTop: 20}}>Already have account? <Text style={{ color: '#FDB075'}}>Login</Text></Text>
                 </View>
             </ScrollView>
         </SafeAreaView>

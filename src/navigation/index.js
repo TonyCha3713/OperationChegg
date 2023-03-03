@@ -12,10 +12,10 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Registration" component={Registration} />
-        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Tabs" component={Tabs} />
         <Stack.Screen name="FindSchool" component={FindSchool} />
+        <Stack.Screen name="Registration" component={Registration} />
+        <Stack.Screen name="Login" component={Login} />
       </Stack.Navigator>
     </NavigationContainer>
   );

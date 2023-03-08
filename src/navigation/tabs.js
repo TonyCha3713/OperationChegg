@@ -24,12 +24,12 @@ const Tabs = () => {
                     tabBarIcon: ({focused}) => (
                         <View style={{alignItems: 'center', justifyContent: 'center', top: 3}}>
                             <Icon 
-                                name="ios-search"
+                                name="home-outline"
                                 size={26}
                                 color={focused ? COLORS.blue : COLORS.white}
                             />
                             <Text style={{color: focused ? COLORS.blue : COLORS.white, fontSize: 10, fontWeight: 'bold'}}>
-                                Search
+                                Home
                             </Text>
                         </View>
                     ),

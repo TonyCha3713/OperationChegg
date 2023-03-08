@@ -106,7 +106,7 @@ const Login = ({ navigation }) => {
           />
           <Button title="Log in" onPress={Login} />
           <Text
-            onPress={() => navigation.navigate("Registration")}
+            onPress={() => navigation.navigate("Register")}
             style={{
               color: COLORS.black,
               textAlign: "center",

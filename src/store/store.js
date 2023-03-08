@@ -16,7 +16,7 @@ export const ContextProvider = (props) => {
     async function isLoggedIn() {
       try {
         const jwtret = await getData("jwt");
-        setJwt(jwtret);
+        setJwt(JSON.parse(jwtret));
         const userret = await getData("user");
         setUser(JSON.parse(userret));
       } catch (error) {

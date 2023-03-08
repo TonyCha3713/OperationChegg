@@ -160,12 +160,12 @@ const PostTab = ({ navigation }) => {
           <Button title="Add image" onPress={pickImage} />
           <View>
             <Text style={{ color: COLORS.grey, fontSize: 14 }}>Price</Text>
-            <Text style={{ color: COLORS.white, fontWeight: "bold", fontSize: 30, alignSelf: "center" }}>${price}</Text>
+            <Text style={{ color: COLORS.white, fontWeight: "bold", fontSize: 30, alignSelf: "center" }}>${price / 100}</Text>
             <Slider
               minimumValue={0}
               maximumValue={1000}
               value={200}
-              step={100}
+              step={25}
               minimumTrackTintColor={COLORS.blue}
               thumbTintColor={COLORS.blue}
               onValueChange={(value) => setPrice(value)}

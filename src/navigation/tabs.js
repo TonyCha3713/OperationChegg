@@ -5,6 +5,7 @@ import PostTab from "../screens/PostTab";
 import FolderTab from "../screens/FolderTab";
 import COLORS from "../colors/colors";
 import Icon from "react-native-vector-icons/Ionicons";
+import SearchStack from "../screens/SearchStack";
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
@@ -23,7 +24,7 @@ const Tabs = () => {
     >
       <Tab.Screen
         name="Search"
-        component={SearchTab}
+        component={SearchStack}
         options={{
           tabBarIcon: ({ focused }) => (
             <View style={{ alignItems: "center", justifyContent: "center", top: 3 }}>

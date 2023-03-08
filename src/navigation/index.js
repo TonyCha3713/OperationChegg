@@ -12,16 +12,15 @@ const Stack = createNativeStackNavigator();
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <ContextProvider>
-        <Stack.Navigator initialRouteName="Tabs" screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Registration" component={Registration} />
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Tabs" component={Tabs} />
-          <Stack.Screen name="FindSchool" component={FindSchool} />
-        </Stack.Navigator>
-      </ContextProvider>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Tabs" component={Tabs} />
+        <Stack.Screen name="Registration" component={Registration} />
+        <Stack.Screen name="FindSchool" component={FindSchool} />
+        <Stack.Screen name="Login" component={Login} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
 export default Navigation;
+s;

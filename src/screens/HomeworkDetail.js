@@ -8,11 +8,12 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 import Slider from 'react-native-slider';
 import Loader from './Loader';
+import Icons from 'react-native-vector-icons/FontAwesome'
 export const SLIDER_WIDTH = Dimensions.get('window').width + 80
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
 
 
-const PostTab = ({navigation}) => {
+const HomeworkDetail = ({navigation}) => {
   const isCarousel = React.useRef(null)
   const [image, setImage] = useState(null);
   const [index, setIndex] = useState(0);
@@ -85,42 +86,24 @@ const PostTab = ({navigation}) => {
     <SafeAreaView style={{backgroundColor: COLORS.black, flex: 1}}>
       <Loader visible={loading}/>
       <ScrollView contentContainerStyle={{paddingTop: 50, paddingHorizontal: 20}}>
-        <Text style={{color: COLORS.white, fontSize: 40, fontWeight: 'bold'}}>Upload</Text>
-        <Text style={{color: COLORS.grey, fontSize: 18, marginVertical: 10}}>Post your homework, quiz, or test and get paid!</Text>
+        <Text style={{color: COLORS.white, fontSize: 40, fontWeight: 'bold'}}>$70</Text>
+        <Text style={{color: COLORS.grey, fontSize: 20, marginVertical: 10}}>Homework Packet #5</Text>
+        <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+            <Text style={{color: COLORS.blue, fontSize: 12}}>AP Computer Science</Text>
+            <Text style={{color: COLORS.blue, fontSize: 12}}>Mr.Swatek</Text>
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <Icons 
+                    name="thumbs-o-up"
+                    style={{
+                        color: COLORS.blue,
+                        marginRight: 5,
+                    }}
+                />
+                <Text style={{color: COLORS.blue}}>59</Text>
+            </View>
+        </View>
         <View style={{marginVertical: 20}}>
-          <Input 
-            iconName="clipboard-list-outline"
-            label="Assignment title"
-            placeholder="Enter assignment title"
-            placeholderTextColor={COLORS.grey}
-            onChangeText={text => handleOnChange(text, 'title')}
-            error={errors.title}
-            onFocus={() => {
-                handleOnError(null, 'title');
-            }}
-          />
-          <Input 
-            iconName="school-outline"
-            label="Class name"
-            placeholder="Enter class name"
-            placeholderTextColor={COLORS.grey}
-            onChangeText={text => handleOnChange(text, 'className')}
-            error={errors.className}
-            onFocus={() => {
-                handleOnError(null, 'className');
-            }}
-          />
-          <Input 
-            iconName="account-outline"
-            label="Teacher name"
-            placeholder="Enter teacher's name"
-            placeholderTextColor={COLORS.grey}
-            onChangeText={text => handleOnChange(text, 'teacherName')}
-            error={errors.teacherName}
-            onFocus={() => {
-                handleOnError(null, 'teacherName');
-            }}
-          />
+            <Text style={{color: COLORS.white, fontSize: 18, marginVertical: 10}}>Preview</Text>
           <View style={styles.slider}>
           {
            image ? (
@@ -135,6 +118,7 @@ const PostTab = ({navigation}) => {
                     <Image
                       source={{ uri: item.uri }}
                       style={{width: ITEM_WIDTH, height: ITEM_WIDTH+80, borderRadius: 15, borderColor: COLORS.blue, borderWidth: 2}}
+                      blurRadius={90}
                     />
                   </View>
                 )}
@@ -144,7 +128,6 @@ const PostTab = ({navigation}) => {
                 inactiveSlideShift={0}
                 useScrollView={true}
               />
-              <Button title="Add image" onPress={pickImage}/>
             </>
             ) : (
               <TouchableOpacity style={styles.noImage} onPress={pickImage}>
@@ -152,21 +135,8 @@ const PostTab = ({navigation}) => {
               </TouchableOpacity>
             )
           }
-          </View> 
-          <View>
-            <Text style={{color: COLORS.grey, fontSize: 14}}>Price</Text>
-            <Text style={{ color: COLORS.white, fontWeight: 'bold', fontSize: 30, alignSelf: 'center'}}>${price}</Text>
-            <Slider 
-              minimumValue={0}
-              maximumValue={1000}
-              value={200}
-              step={100}
-              minimumTrackTintColor={COLORS.blue}
-              thumbTintColor={COLORS.blue}
-              onValueChange={value => setPrice(value)}
-            />
           </View>
-          <Button title="Submit" onPress={Submit}/>
+          <Button title="Buy" onPress={Submit}/>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -202,4 +172,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default PostTab;
+export default HomeworkDetail;

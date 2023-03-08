@@ -14,7 +14,10 @@ const Tabs = () => {
         headerShown: false,
         tabBarShowLabel: false,
         tabBarStyle: {
+          //   height: 90,
           backgroundColor: COLORS.black,
+          borderTopWidth: 0.5,
+          borderTopColor: "#525452",
         },
       }}
     >

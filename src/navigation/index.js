@@ -6,6 +6,7 @@ import FindSchool from "../screens/FindSchool";
 import Registration from "../screens/Registration";
 import Login from "../screens/Login";
 import Tabs from "./tabs";
+import HomeworkDetail from "../screens/HomeworkDetail";
 
 const Stack = createNativeStackNavigator();
 const Navigation = () => {
@@ -13,6 +14,7 @@ const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Tabs" component={Tabs} />
+        <Stack.Screen name="HomeworkDetail" component={HomeworkDetail} />
         <Stack.Screen name="Registration" component={Registration} />
         <Stack.Screen name="FindSchool" component={FindSchool} />
         <Stack.Screen name="Login" component={Login} />

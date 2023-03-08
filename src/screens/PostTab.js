@@ -155,7 +155,7 @@ const PostTab = ({navigation}) => {
           </View> 
           <View>
             <Text style={{color: COLORS.grey, fontSize: 14}}>Price</Text>
-            <Text style={{ color: COLORS.white, fontWeight: 'bold', fontSize: 30, alignSelf: 'center'}}>{price}  =  ${price/1000}</Text>
+            <Text style={{ color: COLORS.white, fontWeight: 'bold', fontSize: 30, alignSelf: 'center'}}>${price}</Text>
             <Slider 
               minimumValue={0}
               maximumValue={1000}
